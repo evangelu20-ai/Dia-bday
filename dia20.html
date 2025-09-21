@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>happy bday Di!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Forum', cursive;
+      text-align: center;
+      background: linear-gradient(135deg, #D8E2DC, #FFE5D9, #FFCAD4, #F4ACB7, #9D8189);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: #9D8189;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 20px 0;
+      text-transform: lowercase;
+      color: #89AC76;
+    }
+
+    .contador {
+      font-size: 1.5em;
+      margin: 20px;
+      color: #000000;
+    }
+
+    button {
+      background-color: #89AC76;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 20px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 20px;
+      font-family: 'Forum', cursive;
+      text-transform: lowercase;
+    }
+
+    button:hover {
+      background-color: #FFCAD4;
+      transform: scale(1.05);
+    }
+
+    button:disabled {
+      background-color: #D8E2DC;
+      color: #9D8189;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .sorpresa {
+      display: none;
+      margin-top: 30px;
+      font-size: 1.3em;
+      color: #9D8189;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .gifs-deco {
+      margin: 15px 0;
+    }
+
+    .gifs-deco img {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- gifs decorativos arriba -->
+  <div class="gifs-deco">
+    <img src="https://media.tenor.com/gUf7q7Z5oiQAAAAi/pompompurin-peek.gif" width="100">
+    <img src="https://media.tenor.com/BlkPv7LqE-8AAAAi/yay-snoopy.gif" width="100">
+    <img src="https://media.tenor.com/oOzrJjzToQ0AAAAi/cute-cat.gif" width="100">
+
+ 
+  </div>
+
+  <h1>happy bday di!</h1>
+
+  <!-- contador -->
+  <div class="contador" id="contador"></div>
+
+  <!-- botón (inicia bloqueado) -->
+  <button id="btnSorpresa" onclick="mostrarSorpresa()" disabled>
+    haz clic para ver tu sorpresa :3
+  </button>
+
+  <!-- sorpresa -->
+  <div class="sorpresa" id="sorpresa">
+    <p>
+      Hoy cumples 22 Diaaaa y más que la pases bien, deseo que la pases en paz y alegría, rodeada de las personas que te quieren y que cada instante de hoy te haga sonreír un poquito más.
+
+Crecer puede asustar pero mientras sigas siendo tú, mientras sigas viviendo con la misma luz y ternura con la que ocupas cada espacio, todo estará bien. A veces todo no siempre es fácil pero sé que siempre encontrarás la manera de llenarla con tus propios colores, de esas cosas que te hacen feliz y que al final son las que te caracterizan y más valen.
+
+Espero que cumplas todos tus sueños y tengas la certeza de que todo lo que anheles puede ser tuyo. Diviértete mucho, mucho hasta que rías a más no poder, que guardes en tu corazón lo especial que es este día, que comas algo delicioso y rebibas muchos regalos cutes y sobre todo quiero que sepas cuánto te quiero. No importa la distancia o los días que pasen, siempre hay un lugar para ti en mí. Celebrar tu vida es un regalo también y yo lo hago deseando que tu vida siga brillando de maneras que ni imaginas todavía.
+
+PD: soy una completa boomer y lo sabes, nunca en mi vida había hecho una página web y esta fue la primera vez y salió tan horrible como lo imaginé ajshsj, fueron semanas duras pero la hice con todo el cariño del mundo, espero que te haya gustado porque cada detalle estaba pensado solo para ti, muak &lt;3
+    </p>
+
+    <!-- gifs dentro de la sorpresa -->
+    <div class="gifs-deco">
+      <img src="https://media.tenor.com/yv947GjWaRQAAAAi/pompompurin-miikun.gif" width="120">
+      <img src="https://media.tenor.com/tyKji3arFVEAAAAi/nukocities-kitty.gif" width="120">
+      <img src="https://c.tenor.com/_hPzunPE5qYAAAAC/tenor.gif" width="120">
+
+    
+    </div>
+
+    <!-- cancion -->
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6euUjTQwdyS7Kkj6QoFKRt?utm_source=generator" width="80%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    <!-- gifs decorativos abajo -->
+    <div class="gifs-deco">
+      <img src="https://c.tenor.com/fANKspv9dSIAAAAC/tenor.gif" width="100">
+      <img src="https://media.tenor.com/gw_ObkzAucUAAAAi/sylvi.gif" width="100">
+      <img src="https://media.tenor.com/BlkPv7LqE-8AAAAi/yay-snoopy.gif" width="100">
+
+
+    </div>
+  </div>
+
+  <script>
+    // contador
+    const fechaCumple = new Date("September 22, 2025 00:00:00").getTime();
+    const timer = setInterval(function() {
+      const ahora = new Date().getTime();
+      const diferencia = fechaCumple - ahora;
+
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+      if (diferencia > 0) {
+        document.getElementById("contador").innerHTML =
+          "faltan " + dias + "d " + horas + "h " + minutos + "m " + segundos + "s para tu cumple :3";
+      } else {
+        clearInterval(timer);
+        document.getElementById("contador").innerHTML = "¡feliz cumpleaños Di! 🩷";
+
+        // ✅ activar el botón
+        const boton = document.getElementById("btnSorpresa");
+        boton.disabled = false;
+        boton.innerText = "ya puedes ver tu sorpresa :3";
+      }
+    }, 1000);
+
+    // sorpresa
+    function mostrarSorpresa() {
+      document.getElementById("sorpresa").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
